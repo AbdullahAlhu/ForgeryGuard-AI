@@ -1,0 +1,73 @@
+{
+  "project": "ForgeryGuard AI",
+  "purpose": "Independent M2/M3 reproducibility evidence",
+  "reference_operator": "Mishari",
+  "reproduction_operator": "Abdullah",
+  "reference_github_commit": "d31e5882a1252989379957e845137f25def52b6b",
+  "reproduction_github_commit": "9d8238aba5bfc146a307b8f5b6a6cc0c8cf644c1",
+  "reference_notebook_sha256": "de62d0d24d6b77ce8b5eb227d980b979352a21363b90bd7111dc4e763fe1d40e",
+  "reproduction_notebook_sha256": "69c1783c99c0348a0d9fd0939c4b91d5a80f19693e5001b96d749b69c47a7b9b",
+  "reference_wandb_offline_runs": [
+    "offline-run-20261029_104543-swgfffwc",
+    "offline-run-20261029_110406-2di9i06z",
+    "offline-run-20261029_111705-o8mw82oe",
+    "offline-run-20261029_114313-qnibs4sc"
+  ],
+  "reproduction_wandb_offline_runs": [
+    "offline-run-20261112_160442-t5bvjg29",
+    "offline-run-20261112_162422-sod8ajin",
+    "offline-run-20261112_163818-jhakj34o",
+    "offline-run-20261112_170544-ih380ggh"
+  ],
+  "config_exact_match": true,
+  "comparison": {
+    "validation": {
+      "reference_shape": [
+        3,
+        21
+      ],
+      "reproduction_shape": [
+        3,
+        21
+      ],
+      "columns_identical": true,
+      "mismatch_count_at_1e-12": 0,
+      "max_numeric_absolute_delta": 9.71445146547012e-17,
+      "status": "MATCH",
+      "mismatches": []
+    },
+    "test": {
+      "reference_shape": [
+        3,
+        21
+      ],
+      "reproduction_shape": [
+        3,
+        21
+      ],
+      "columns_identical": true,
+      "mismatch_count_at_1e-12": 0,
+      "max_numeric_absolute_delta": 7.112366251504909e-17,
+      "status": "MATCH",
+      "mismatches": []
+    },
+    "jpeg90": {
+      "reference_shape": [
+        3,
+        21
+      ],
+      "reproduction_shape": [
+        3,
+        21
+      ],
+      "columns_identical": true,
+      "mismatch_count_at_1e-12": 0,
+      "max_numeric_absolute_delta": 6.765421556309548e-17,
+      "status": "MATCH",
+      "mismatches": []
+    }
+  },
+  "generated_utc": "2026-11-12T18:19:21.532429+00:00",
+  "extraction_note": "Reference tables/config were extracted from immutable saved notebook source and printed output; reproduction CSVs are actual exported files from Abdullah run.",
+  "limitation": "Standalone reference config/environment/report files were not retained. Unprinted dependency versions are unavailable and were not inferred."
+}

@@ -1,0 +1,16 @@
+{
+  "reference": {
+    "python": "3.13.15",
+    "pytorch": "2.11.0+cu128",
+    "device": "cuda",
+    "gpu": "Tesla T4",
+    "other_package_versions": "not available in saved notebook output"
+  },
+  "reproduction": {
+    "python": "3.13.15",
+    "pytorch": "2.11.0+cu128",
+    "device": "cuda",
+    "gpu": "Tesla T4",
+    "other_package_versions": "not available in saved notebook output"
+  }
+}
