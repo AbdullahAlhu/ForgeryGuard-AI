@@ -1,0 +1,36 @@
+# ForgeryGuard AI — reconstructed target environment
+# Python 3.13.15
+# PyTorch/CUDA pair follows the verified Kaggle run: PyTorch 2.11.0 + CUDA 12.8.
+# Install with: python -m pip install -r requirements.txt
+
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+# Core numerical and data stack
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+Pillow==11.3.0
+matplotlib==3.10.3
+seaborn==0.13.2
+scikit-learn==1.7.1
+tqdm==4.67.1
+
+# Computer vision and model training
+torch==2.11.0
+torchvision==0.26.0
+opencv-python-headless==4.12.0.88
+wandb==0.21.3
+
+# Phase 2: detection, segmentation, ONNX and API deployment
+ultralytics==8.3.228
+pycocotools==2.0.10
+onnx==1.19.1
+onnxruntime-gpu==1.23.2
+fastapi==0.121.0
+uvicorn[standard]==0.38.0
+python-multipart==0.0.20
+pydantic==2.12.4
+
+# Notebook execution
+jupyterlab==4.4.9
+ipykernel==6.30.1
