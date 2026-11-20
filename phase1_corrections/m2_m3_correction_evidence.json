@@ -1,0 +1,45 @@
+{
+  "effective_data": {
+    "input_images": 36386,
+    "conflicting_rgb_hashes": 4,
+    "excluded_source_groups": 4,
+    "excluded_source_images": 8,
+    "retained_classification_images": 36378,
+    "effective_source_pairs": 18189,
+    "remaining_conflicting_hashes": 0,
+    "cross_split_pixel_hashes": 0,
+    "train_per_class": 12733,
+    "validation_per_class": 2728,
+    "test_per_class": 2728,
+    "data_id": "70d923b1c24c20cb72301ebaaf461eadd962723d7229be8d94b8da325a2db4d1"
+  },
+  "primary_selected_model": "M3_ResNet18_frozen",
+  "primary_test_metrics": {
+    "accuracy": 0.524194,
+    "macro_f1": 0.524173,
+    "ece": 0.037357,
+    "original": {
+      "precision": 0.5245,
+      "recall": 0.5176,
+      "f1": 0.521,
+      "support": 2728
+    },
+    "forged": {
+      "precision": 0.5239,
+      "recall": 0.5308,
+      "f1": 0.5273,
+      "support": 2728
+    }
+  },
+  "primary_error_analysis": {
+    "false_negatives": 1280,
+    "false_positives": 1316,
+    "masks_analyzed": 2728,
+    "missing_masks": 0,
+    "highest_false_negative_rate_bin": "<1%",
+    "highest_false_negative_rate": 0.48514851485148514
+  },
+  "calibration_interpretation": "ECE is interpreted with confidence concentration. Since 94.34% of confidence values fall between 0.50 and 0.65, the low ECE does not establish a reliable high-performing classifier; it primarily reflects low-confidence predictions.",
+  "primary_wandb": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI/runs/ggmh9kzb",
+  "reproduction_wandb": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI/runs/r9f08w6k"
+}

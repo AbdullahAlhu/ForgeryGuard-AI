@@ -1,0 +1,9 @@
+Milestone,Rubric item,Original observation,Corrective evidence,Status,Repository action
+M1,Cleaning,Decode check and near-duplicate audit missing,Full decode audit; pHash audit; visual review; one cross-split source excluded,Corrected,Raw M1 executed notebook still needs repository upload
+M1,Leakage-safe split,"Method, ratio, seed and artifact insufficiently documented","Corrected 70/15/15 manifest, SHA-256, zero leakage; missing original seed disclosed",Corrected with disclosed limitation,Commit corrected manifest
+M2/M3,Per-class metrics,Only forged recall reported,"Precision, Recall, F1 and support for both classes and all models",Corrected,Present in executed notebooks
+M2/M3,Calibration,No interpretation,ECE interpreted with confidence concentration and discrimination,Corrected,Present in executed notebooks
+M2/M3,Error analysis,Major false-negative mode not shown,False negatives counted by manipulated-region area,Corrected,Present in executed notebooks
+M2/M3,Improvement plan,Untested causal explanations,Measured mask-area association; causal claim limits stated,Corrected,Present in executed notebooks
+Reproducibility,Pinned requirements,requirements.txt absent from repository,Clean V2 exports exact package versions at runtime,Needs repository verification,Upload generated requirements.txt from primary output ZIP
+Reproducibility,Independent rerun,No independent rerun,"Two completed Kaggle notebooks, matching data/config IDs, comparison report and W&B runs",Corrected,Fine-tuned instability disclosed

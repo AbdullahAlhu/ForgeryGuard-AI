@@ -1,0 +1,58 @@
+{
+  "full_decode_audit": {
+    "source_pairs": 18194,
+    "files_attempted": 54582,
+    "files_decoded_successfully": 54582,
+    "decode_errors": 0,
+    "dimension_issue_groups": 0,
+    "status": "PASSED"
+  },
+  "near_duplicate_audit": {
+    "original_images_phashed": 18194,
+    "phash_bits": 64,
+    "hamming_threshold": 5,
+    "near_duplicate_pairs": 5,
+    "near_duplicate_components": 5,
+    "cross_split_near_duplicate_pairs_before_remediation": 1,
+    "status": "VISUALLY REVIEWED AND REMEDIATED"
+  },
+  "remediation": {
+    "reviewed_candidates": 5,
+    "confirmed_related_scenes": 5,
+    "excluded_source_groups": [
+      "000000396188"
+    ],
+    "excluded_pairs": 1,
+    "corrected_total_pairs": 18193,
+    "remaining_cross_split_candidates": 0,
+    "raw_files_deleted": 0,
+    "status": "CROSS-SPLIT NEAR-DUPLICATE LEAKAGE REMEDIATED"
+  },
+  "corrected_split": {
+    "strategy": "source-grouped split preserved after exclusion",
+    "train_pairs": 12735,
+    "validation_pairs": 2729,
+    "test_pairs": 2729,
+    "ratios": {
+      "train": 0.699995,
+      "validation": 0.150003,
+      "test": 0.150003
+    },
+    "source_group_leakage": 0,
+    "manifest_sha256": "42d9c01f7588366ed5e2a327da4c2cca5253ea0a4989167827ec8df386f0a9c6",
+    "original_split_seed": null,
+    "seed_disclosure": "Original seed was not preserved; exact assignments are reproduced by the committed manifest.",
+    "status": "ADOPTED AND DOCUMENTED"
+  },
+  "final_checkpoint": {
+    "technical_status": "PASS",
+    "classification_images": 36386,
+    "decode_errors": 0,
+    "dimension_issues": 0,
+    "source_group_leakage": 0,
+    "remaining_cross_split_near_duplicates": 0,
+    "privacy_review": "PENDING \u2014 manual verification",
+    "license_review": "PENDING \u2014 agreement verification"
+  },
+  "raw_evidence_availability": "The executed M1 correction notebook/output archive was not attached to the current review. The figures in this file reproduce the verified console outputs supplied by the team. The raw M1 notebook and exported correction artifacts should be added to GitHub for strongest evidence."
+}

@@ -1,0 +1,4 @@
+model,primary_test_accuracy,reproduction_test_accuracy,absolute_accuracy_difference,primary_test_macro_f1,reproduction_test_macro_f1,absolute_macro_f1_difference,team_tolerance,within_tolerance
+M2_CNN,0.500733,0.500367,0.000366,0.480995,0.475235,0.00576,0.03,True
+M3_ResNet18_frozen,0.524194,0.524194,0.0,0.524173,0.524175,2e-06,0.03,True
+M3_ResNet18_finetuned,0.501283,0.574047,0.072764,0.457928,0.571949,0.114021,0.03,False

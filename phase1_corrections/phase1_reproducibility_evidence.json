@@ -1,0 +1,98 @@
+{
+  "project": "ForgeryGuard AI",
+  "phase": "Phase 1 \u2014 M2/M3 independent reproduction",
+  "comparison_scope": "Held-out test metrics at 224x224 and threshold 0.5",
+  "team_defined_absolute_tolerance": 0.03,
+  "same_data_id": true,
+  "same_config_hash": true,
+  "same_gpu_model": true,
+  "environment_exactly_identical": false,
+  "primary": {
+    "role": "primary",
+    "owner": "Abdullah",
+    "python": "3.13.15",
+    "pytorch": "2.11.0+cu128",
+    "gpu": "Tesla T4",
+    "data_id": "70d923b1c24c20cb72301ebaaf461eadd962723d7229be8d94b8da325a2db4d1",
+    "config_hash": "d6214e9b52eabf9897af8702e6a42ff5fbe3a331ae4f6206d5ff5552708c17de",
+    "selected_model": "M3_ResNet18_frozen",
+    "wandb_url": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI/runs/ggmh9kzb",
+    "metrics": {
+      "M2_CNN": {
+        "accuracy": 0.500733,
+        "macro_f1": 0.480995
+      },
+      "M3_ResNet18_frozen": {
+        "accuracy": 0.524194,
+        "macro_f1": 0.524173
+      },
+      "M3_ResNet18_finetuned": {
+        "accuracy": 0.501283,
+        "macro_f1": 0.457928
+      }
+    }
+  },
+  "reproduction": {
+    "role": "reproduction",
+    "owner": "Mishari",
+    "python": "3.13.16",
+    "pytorch": "2.11.0+cu130",
+    "gpu": "Tesla T4",
+    "data_id": "70d923b1c24c20cb72301ebaaf461eadd962723d7229be8d94b8da325a2db4d1",
+    "config_hash": "d6214e9b52eabf9897af8702e6a42ff5fbe3a331ae4f6206d5ff5552708c17de",
+    "selected_model": "M3_ResNet18_finetuned",
+    "wandb_url": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI/runs/r9f08w6k",
+    "metrics": {
+      "M2_CNN": {
+        "accuracy": 0.500367,
+        "macro_f1": 0.475235
+      },
+      "M3_ResNet18_frozen": {
+        "accuracy": 0.524194,
+        "macro_f1": 0.524175
+      },
+      "M3_ResNet18_finetuned": {
+        "accuracy": 0.574047,
+        "macro_f1": 0.571949
+      }
+    }
+  },
+  "model_comparison": [
+    {
+      "model": "M2_CNN",
+      "primary_test_accuracy": 0.500733,
+      "reproduction_test_accuracy": 0.500367,
+      "absolute_accuracy_difference": 0.000366,
+      "primary_test_macro_f1": 0.480995,
+      "reproduction_test_macro_f1": 0.475235,
+      "absolute_macro_f1_difference": 0.00576,
+      "team_tolerance": 0.03,
+      "within_tolerance": true
+    },
+    {
+      "model": "M3_ResNet18_frozen",
+      "primary_test_accuracy": 0.524194,
+      "reproduction_test_accuracy": 0.524194,
+      "absolute_accuracy_difference": 0.0,
+      "primary_test_macro_f1": 0.524173,
+      "reproduction_test_macro_f1": 0.524175,
+      "absolute_macro_f1_difference": 2e-06,
+      "team_tolerance": 0.03,
+      "within_tolerance": true
+    },
+    {
+      "model": "M3_ResNet18_finetuned",
+      "primary_test_accuracy": 0.501283,
+      "reproduction_test_accuracy": 0.574047,
+      "absolute_accuracy_difference": 0.072764,
+      "primary_test_macro_f1": 0.457928,
+      "reproduction_test_macro_f1": 0.571949,
+      "absolute_macro_f1_difference": 0.114021,
+      "team_tolerance": 0.03,
+      "within_tolerance": false
+    }
+  ],
+  "official_primary_selected_model": "M3_ResNet18_frozen",
+  "official_model_reproduced_within_tolerance": true,
+  "conclusion": "The independent run used the same effective data and experiment configuration. M2_CNN and the official primary-selected frozen ResNet18 reproduced within the predeclared absolute tolerance. Fine-tuned ResNet18 did not reproduce within tolerance and changed the validation-selected winner; this instability is reported as a limitation rather than hidden."
+}
