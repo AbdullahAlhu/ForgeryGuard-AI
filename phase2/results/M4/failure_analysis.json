@@ -1,0 +1,42 @@
+{
+  "completed": true,
+  "case_id": "M4-GALLERY-DISPLACED-DOG-COPYMOVE",
+  "analysis": "One reviewed case contained a duplicated dog placed in a semantically unrelated area of the same image, producing an implausible spatial arrangement. Although the manipulation was noticeable to a human reviewer, its irregular object boundaries, scale, and surrounding texture make precise localization challenging. This case illustrates why quantitative detection metrics should be supported by qualitative failure analysis.",
+  "quantitative_context": {
+    "false_positive_breakdown": [
+      {
+        "type": "FP_background",
+        "count": 437
+      },
+      {
+        "type": "FP_localisation",
+        "count": 71
+      },
+      {
+        "type": "FP_duplicate",
+        "count": 5
+      }
+    ],
+    "recall_by_object_size": [
+      {
+        "size": "small",
+        "matched": 153,
+        "total": 545,
+        "recall": 0.28073394495412846
+      },
+      {
+        "size": "medium",
+        "matched": 865,
+        "total": 1353,
+        "recall": 0.639320029563932
+      },
+      {
+        "size": "large",
+        "matched": 618,
+        "total": 830,
+        "recall": 0.744578313253012
+      }
+    ]
+  },
+  "scope_limit": "This observation represents one manually reviewed qualitative case and does not describe every detection error."
+}

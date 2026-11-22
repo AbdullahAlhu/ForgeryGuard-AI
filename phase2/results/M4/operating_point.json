@@ -1,0 +1,8 @@
+{
+  "confidence": 0.2,
+  "nms_iou": 0.5,
+  "validation_precision": 0.7758661966237539,
+  "validation_recall": 0.6026392961876833,
+  "validation_f1": 0.6783686551956473,
+  "selection_status": "target_recall_not_met_selected_max_recall"
+}
