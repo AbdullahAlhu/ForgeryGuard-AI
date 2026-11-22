@@ -1,0 +1,18 @@
+{
+  "frozen_before_test_evaluation": true,
+  "source": "ForgeryGuard AI approved project proposal",
+  "criteria": {
+    "m4_min_test_map50": 0.7,
+    "m4_min_test_recall": 0.85,
+    "m5_min_test_dice": 0.75,
+    "m5_min_test_iou": 0.65,
+    "onnx_max_abs_difference": 0.001,
+    "m8_max_p95_ms": 1000.0,
+    "m8_min_throughput_images_per_second": 2.0
+  },
+  "selection_policy": {
+    "m4": "Select confidence and NMS IoU on validation data by target recall, then F1.",
+    "m5": "Select the binary mask threshold on validation Dice and IoU.",
+    "test": "Evaluate final operating points without test-set tuning."
+  }
+}

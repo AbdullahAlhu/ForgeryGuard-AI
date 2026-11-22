@@ -1,0 +1,18 @@
+{
+  "mode": "online",
+  "run_path": "mkajrfi-kaust/ForgeryGuard-AI-Phase2/ze3ur823",
+  "run_url": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI-Phase2/runs/ze3ur823",
+  "summary": {
+    "M4/test_mAP50": 0.6763938161399177,
+    "M4/test_mAP50_95": 0.4826018818178679,
+    "M4/test_precision": 0.7698112348186205,
+    "M4/test_recall": 0.6043697235827682,
+    "M5/test_dice": 0.8805752890221988,
+    "M5/test_iou": 0.8064440792539856,
+    "M5/test_mask_AP50": 0.938335429201291,
+    "M5/test_mask_mAP50_95": 0.6570223359100547,
+    "M8/onnx_max_abs_difference": 0.0010986328125,
+    "M8/p95_latency_ms": 52.5892375502735,
+    "M8/throughput_images_per_second": 30.791324254983827
+  }
+}

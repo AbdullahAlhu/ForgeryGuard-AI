@@ -1,0 +1,205 @@
+{
+  "project": "ForgeryGuard AI",
+  "effective_source_pairs": 18189,
+  "split_counts": {
+    "train": 12733,
+    "val": 2728,
+    "test": 2728
+  },
+  "m4": {
+    "operating_point": {
+      "confidence": 0.2,
+      "nms_iou": 0.5,
+      "validation_precision": 0.7758661966237539,
+      "validation_recall": 0.6026392961876833,
+      "validation_f1": 0.6783686551956473,
+      "selection_status": "target_recall_not_met_selected_max_recall"
+    },
+    "test_metrics": {
+      "map50": 0.6763938161399177,
+      "map50_95": 0.4826018818178679,
+      "precision_at_operating_point": 0.7698112348186205,
+      "recall_at_operating_point": 0.6043697235827682,
+      "f1_at_operating_point": 0.677131494733378,
+      "confidence": 0.2,
+      "nms_iou": 0.5
+    },
+    "per_class_ap": [
+      {
+        "class_id": 0,
+        "class_name": "copy_move_region",
+        "ap50_95": 0.4826018818178679,
+        "ap50": 0.6763938161399177
+      }
+    ],
+    "recall_by_size": [
+      {
+        "size": "small",
+        "matched": 153,
+        "total": 545,
+        "recall": 0.28073394495412846
+      },
+      {
+        "size": "medium",
+        "matched": 865,
+        "total": 1353,
+        "recall": 0.639320029563932
+      },
+      {
+        "size": "large",
+        "matched": 618,
+        "total": 830,
+        "recall": 0.744578313253012
+      }
+    ],
+    "false_positive_breakdown": [
+      {
+        "type": "FP_background",
+        "count": 437
+      },
+      {
+        "type": "FP_localisation",
+        "count": 71
+      },
+      {
+        "type": "FP_duplicate",
+        "count": 5
+      }
+    ]
+  },
+  "m5": {
+    "selected_threshold": 0.4,
+    "otsu_baseline": {
+      "selected_polarity": "dark",
+      "validation": {
+        "dice": 0.5119577473792615,
+        "iou": 0.3440478564890225,
+        "precision": 0.44606630104466166,
+        "recall": 0.6006896453969514
+      },
+      "test": {
+        "dice": 0.511362850045097,
+        "iou": 0.34351074072052296,
+        "precision": 0.4451904214156084,
+        "recall": 0.6006412546127553
+      },
+      "note": "Simple image-specific Otsu baseline; polarity selected on validation only."
+    },
+    "validation_metrics": {
+      "loss": 0.37054341314824796,
+      "dice": 0.881290475177195,
+      "iou": 0.8077068713406654,
+      "precision": 0.8751303282914764,
+      "recall": 0.9167414214438719,
+      "threshold": 0.4
+    },
+    "test_metrics": {
+      "loss": 0.3753027966644757,
+      "dice": 0.8805752890221988,
+      "iou": 0.8064440792539856,
+      "precision": 0.870996367332844,
+      "recall": 0.9161534772210469,
+      "global_dice": 0.893004414834699,
+      "global_iou": 0.8066919387951778,
+      "threshold": 0.4
+    },
+    "mask_ap": {
+      "mask_ap50": 0.938335429201291,
+      "mask_map50_95": 0.6570223359100547,
+      "evaluation_scope": "single-instance positive crops",
+      "confidence_definition": "mean foreground probability inside the predicted binary mask",
+      "interpolation": "101-point"
+    }
+  },
+  "m8": {
+    "onnx_parity": {
+      "sample_source_group": "000000000049",
+      "pytorch_shape": [
+        1,
+        5,
+        8400
+      ],
+      "onnx_shape": [
+        1,
+        5,
+        8400
+      ],
+      "max_absolute_difference": 0.0010986328125,
+      "mean_absolute_difference": 1.634715408727061e-05,
+      "target_max_absolute_difference": 0.001,
+      "passed": false,
+      "onnx_sha256": "03a236032ef7bf27e8a00126956c9560e1c210022bee9417704103bd75cf8e1e"
+    },
+    "api_smoke_test": {
+      "health_status_code": 200,
+      "unsupported_tiff_status_code": 415,
+      "valid_png_status_code": 200,
+      "valid_response_fields": [
+        "annotated_jpeg_base64",
+        "boxes",
+        "image_height",
+        "image_width",
+        "mask_png_base64",
+        "mask_positive_pixels",
+        "mask_threshold",
+        "model_version",
+        "stage_latency_ms",
+        "total_latency_ms",
+        "verdict"
+      ],
+      "passed": true
+    },
+    "benchmark": {
+      "hardware": "Tesla T4",
+      "device": "cuda",
+      "batch_size": 1,
+      "warmup_runs": 5,
+      "measured_images": 50,
+      "p50_latency_ms": 35.226410000177566,
+      "p95_latency_ms": 52.5892375502735,
+      "p99_latency_ms": 59.22952578148397,
+      "throughput_images_per_second": 30.791324254983827,
+      "process_rss_before_mb": 5268.19140625,
+      "process_rss_after_mb": 5268.19140625,
+      "peak_gpu_allocated_mb": 419.48681640625,
+      "peak_gpu_reserved_mb": 2816.0,
+      "conditions": "Complete PyTorch M4→M5 pipeline, batch size 1, encoded images disabled during timing."
+    },
+    "go_no_go": {
+      "decision": "NO_GO_FOR_AUTONOMOUS_USE",
+      "checks": {
+        "m4_test_map50": false,
+        "m4_test_recall": false,
+        "m5_test_dice": true,
+        "m5_test_iou": true,
+        "onnx_parity": false,
+        "m8_p95_latency": true,
+        "m8_throughput": true
+      },
+      "failed_criteria": [
+        "m4_test_map50",
+        "m4_test_recall",
+        "onnx_parity"
+      ],
+      "release_scope": "Academic demonstration and human-review screening only."
+    }
+  },
+  "wandb": {
+    "mode": "online",
+    "run_path": "mkajrfi-kaust/ForgeryGuard-AI-Phase2/ze3ur823",
+    "run_url": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI-Phase2/runs/ze3ur823",
+    "summary": {
+      "M4/test_mAP50": 0.6763938161399177,
+      "M4/test_mAP50_95": 0.4826018818178679,
+      "M4/test_precision": 0.7698112348186205,
+      "M4/test_recall": 0.6043697235827682,
+      "M5/test_dice": 0.8805752890221988,
+      "M5/test_iou": 0.8064440792539856,
+      "M5/test_mask_AP50": 0.938335429201291,
+      "M5/test_mask_mAP50_95": 0.6570223359100547,
+      "M8/onnx_max_abs_difference": 0.0010986328125,
+      "M8/p95_latency_ms": 52.5892375502735,
+      "M8/throughput_images_per_second": 30.791324254983827
+    }
+  }
+}
