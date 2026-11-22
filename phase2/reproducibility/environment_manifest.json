@@ -1,0 +1,47 @@
+{
+  "timestamp_utc": "2026-11-22T16:11:18.331041+00:00",
+  "run_owner": "Abdullah Alhuthali and Mishari Alghamdi",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu130",
+  "torchvision": "0.26.0+cu130",
+  "cuda_available": true,
+  "cuda_version": "13.0",
+  "gpu": "Tesla T4",
+  "m1_source_manifest_sha256": "11f55a0a459ec0fb814f691fd9732bb7f3c6a648030ec9d6dfda3694bf5a3bec",
+  "m1_effective_manifest_sha256": "42d9c01f7588366ed5e2a327da4c2cca5253ea0a4989167827ec8df386f0a9c6",
+  "m1_manifest_semantic_sha256": "b86d01060a6b7cdf0cf1b64c66fb10f1b60839a2b9d6b8f1ab89f0b51b851dc5",
+  "bounding_boxes_sha256": "7cfee7cd3d66018478a747773df92e7ff1235d5ac3a3ed1b1214e62f5c9771fe",
+  "m4_checkpoint_sha256": "8ca11ec2a831175c2b4945b2a9fe4c7c57de8b483fdb716c478dad542db37eae",
+  "m5_checkpoint_sha256": "4b63fb9a28939d1419c3b803837f922f93c21321e137894cbc30d3f02201ee0b",
+  "m4_onnx_sha256": "03a236032ef7bf27e8a00126956c9560e1c210022bee9417704103bd75cf8e1e",
+  "config_sha256": "59ded10c7f50eb1ac9a60e14346967411250bf86a6f26bbe6c16fd43af353ec6",
+  "effective_source_pairs": 18189,
+  "m4_operating_point": {
+    "confidence": 0.2,
+    "nms_iou": 0.5,
+    "validation_precision": 0.7758661966237539,
+    "validation_recall": 0.6026392961876833,
+    "validation_f1": 0.6783686551956473,
+    "selection_status": "target_recall_not_met_selected_max_recall"
+  },
+  "m5_mask_threshold": 0.4,
+  "wandb": {
+    "mode": "online",
+    "run_path": "mkajrfi-kaust/ForgeryGuard-AI-Phase2/ze3ur823",
+    "run_url": "https://wandb.ai/mkajrfi-kaust/ForgeryGuard-AI-Phase2/runs/ze3ur823",
+    "summary": {
+      "M4/test_mAP50": 0.6763938161399177,
+      "M4/test_mAP50_95": 0.4826018818178679,
+      "M4/test_precision": 0.7698112348186205,
+      "M4/test_recall": 0.6043697235827682,
+      "M5/test_dice": 0.8805752890221988,
+      "M5/test_iou": 0.8064440792539856,
+      "M5/test_mask_AP50": 0.938335429201291,
+      "M5/test_mask_mAP50_95": 0.6570223359100547,
+      "M8/onnx_max_abs_difference": 0.0010986328125,
+      "M8/p95_latency_ms": 52.5892375502735,
+      "M8/throughput_images_per_second": 30.791324254983827
+    }
+  }
+}

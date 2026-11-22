@@ -1,0 +1,76 @@
+{
+  "seed": 251,
+  "project": "ForgeryGuard_AI_Phase2",
+  "team": "ForgeryGuard_AI",
+  "run_owner": "Abdullah Alhuthali and Mishari Alghamdi",
+  "class_name": "copy_move_region",
+  "mask_threshold": 127,
+  "m4_model": "yolo11n.pt",
+  "m4_imgsz": 640,
+  "m4_batch": 16,
+  "m4_epochs": 30,
+  "m4_patience": 8,
+  "m4_workers": 2,
+  "m4_conf_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "m4_nms_grid": [
+    0.4,
+    0.5,
+    0.6
+  ],
+  "m5_imgsz": 256,
+  "m5_batch": 32,
+  "m5_epochs": 20,
+  "m5_patience": 5,
+  "m5_workers": 0,
+  "m5_lr": 0.0003,
+  "m5_weight_decay": 0.0001,
+  "m5_crop_padding": 0.15,
+  "m5_negative_ratio": 0.25,
+  "m5_threshold_grid": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8
+  ],
+  "mask_ap_iou_thresholds": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "audit_samples": {
+    "train": 36,
+    "val": 12,
+    "test": 12
+  },
+  "audit_page_size": 12,
+  "m8_warmup_runs": 5,
+  "m8_benchmark_images": 50,
+  "onnx_opset": 17,
+  "acceptance": {
+    "m4_min_test_map50": 0.7,
+    "m4_min_test_recall": 0.85,
+    "m5_min_test_dice": 0.75,
+    "m5_min_test_iou": 0.65,
+    "onnx_max_abs_difference": 0.001,
+    "m8_max_p95_ms": 1000.0,
+    "m8_min_throughput_images_per_second": 2.0
+  }
+}
