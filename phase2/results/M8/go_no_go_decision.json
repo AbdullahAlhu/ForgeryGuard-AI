@@ -1,0 +1,18 @@
+{
+  "decision": "NO_GO_FOR_AUTONOMOUS_USE",
+  "checks": {
+    "m4_test_map50": false,
+    "m4_test_recall": false,
+    "m5_test_dice": true,
+    "m5_test_iou": true,
+    "onnx_parity": false,
+    "m8_p95_latency": true,
+    "m8_throughput": true
+  },
+  "failed_criteria": [
+    "m4_test_map50",
+    "m4_test_recall",
+    "onnx_parity"
+  ],
+  "release_scope": "Academic demonstration and human-review screening only."
+}

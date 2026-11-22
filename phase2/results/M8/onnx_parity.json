@@ -1,0 +1,18 @@
+{
+  "sample_source_group": "000000000049",
+  "pytorch_shape": [
+    1,
+    5,
+    8400
+  ],
+  "onnx_shape": [
+    1,
+    5,
+    8400
+  ],
+  "max_absolute_difference": 0.0010986328125,
+  "mean_absolute_difference": 1.634715408727061e-05,
+  "target_max_absolute_difference": 0.001,
+  "passed": false,
+  "onnx_sha256": "03a236032ef7bf27e8a00126956c9560e1c210022bee9417704103bd75cf8e1e"
+}

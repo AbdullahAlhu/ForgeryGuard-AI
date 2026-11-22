@@ -1,0 +1,19 @@
+{
+  "health_status_code": 200,
+  "unsupported_tiff_status_code": 415,
+  "valid_png_status_code": 200,
+  "valid_response_fields": [
+    "annotated_jpeg_base64",
+    "boxes",
+    "image_height",
+    "image_width",
+    "mask_png_base64",
+    "mask_positive_pixels",
+    "mask_threshold",
+    "model_version",
+    "stage_latency_ms",
+    "total_latency_ms",
+    "verdict"
+  ],
+  "passed": true
+}

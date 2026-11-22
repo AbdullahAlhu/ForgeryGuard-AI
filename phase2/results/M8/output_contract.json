@@ -1,0 +1,17 @@
+{
+  "input": "multipart JPG/PNG image or PIL RGB image",
+  "output_fields": [
+    "model_version",
+    "verdict",
+    "image_width",
+    "image_height",
+    "boxes",
+    "mask_threshold",
+    "mask_positive_pixels",
+    "stage_latency_ms",
+    "total_latency_ms",
+    "mask_png_base64",
+    "annotated_jpeg_base64"
+  ],
+  "limitations": "Indicator of possible manipulation; not proof of fraud or legal forgery."
+}

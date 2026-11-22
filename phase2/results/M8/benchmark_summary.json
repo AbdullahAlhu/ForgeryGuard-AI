@@ -1,0 +1,16 @@
+{
+  "hardware": "Tesla T4",
+  "device": "cuda",
+  "batch_size": 1,
+  "warmup_runs": 5,
+  "measured_images": 50,
+  "p50_latency_ms": 35.226410000177566,
+  "p95_latency_ms": 52.5892375502735,
+  "p99_latency_ms": 59.22952578148397,
+  "throughput_images_per_second": 30.791324254983827,
+  "process_rss_before_mb": 5268.19140625,
+  "process_rss_after_mb": 5268.19140625,
+  "peak_gpu_allocated_mb": 419.48681640625,
+  "peak_gpu_reserved_mb": 2816.0,
+  "conditions": "Complete PyTorch M4→M5 pipeline, batch size 1, encoded images disabled during timing."
+}
