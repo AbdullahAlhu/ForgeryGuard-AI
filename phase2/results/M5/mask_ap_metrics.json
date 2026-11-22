@@ -1,0 +1,7 @@
+{
+  "mask_ap50": 0.938335429201291,
+  "mask_map50_95": 0.6570223359100547,
+  "evaluation_scope": "single-instance positive crops",
+  "confidence_definition": "mean foreground probability inside the predicted binary mask",
+  "interpolation": "101-point"
+}

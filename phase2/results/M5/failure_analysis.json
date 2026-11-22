@@ -1,0 +1,8 @@
+{
+  "completed": true,
+  "case_id": "000000130402",
+  "analysis": "The reviewed gallery showed variation in segmentation quality across different manipulation shapes. The lowest-Dice case had weaker overlap between the predicted and reference masks than the median reviewed case. This result indicates that irregular boundaries, small manipulated regions, and low-contrast transitions remain challenging for precise segmentation. The example supports reporting qualitative mask overlays alongside the aggregate Dice and IoU metrics.",
+  "worst_observed_crop_dice": 0.0,
+  "median_crop_dice": 0.9236167594768592,
+  "scope_limit": "This analysis is based on the displayed qualitative gallery and does not represent every segmentation error in the complete test set."
+}
