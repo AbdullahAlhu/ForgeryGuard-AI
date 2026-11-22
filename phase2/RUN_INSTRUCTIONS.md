@@ -1,65 +1,98 @@
 # ForgeryGuard AI — Phase 2 run instructions
 
-## Standalone FastAPI service
+## 1. Download the portable service
 
-The deployment directory already contains the trained detector, the TorchScript
-segmenter, and the API module. The original DEFACTO/MSCOCO dataset is not needed
-for inference.
+Download the `phase2-v1` release or the Blackboard source archive. The API needs
+these files in the same `M8_deployment` directory:
 
-Recommended environment: Python 3.11–3.13. A CUDA GPU is optional; CPU inference
-is supported but may be slower.
+- `phase2_api.py`
+- `m4_detector.pt`
+- `m5_segmenter.ts`
 
-```bash
-python -m venv .venv
-```
+The original DEFACTO/MSCOCO dataset is not needed for inference.
 
-Windows PowerShell:
+## 2. Windows prerequisites
+
+Use **64-bit Python 3.13**. Python 3.14 was not used for the verified run. Install
+the **Microsoft Visual C++ Redistributable 2015–2022 (x64)** before importing
+PyTorch; a missing runtime may produce a `c10.dll` / `WinError 1114` error.
+
+Verify Python:
 
 ```powershell
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-cd M8_deployment
-uvicorn phase2_api:app --host 0.0.0.0 --port 8000
+py -3.13 --version
 ```
 
-macOS/Linux:
+## 3. Windows PowerShell setup
+
+Open PowerShell in the extracted source folder, which contains
+`requirements.txt` and `M8_deployment`:
+
+```powershell
+py -3.13 -m venv M8_deployment\.venv
+.\M8_deployment\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\M8_deployment\.venv\Scripts\python.exe -m pip install -r requirements.txt
+cd M8_deployment
+.\.venv\Scripts\python.exe -m uvicorn phase2_api:app --host 127.0.0.1 --port 8000
+```
+
+If PowerShell is already inside `M8_deployment`, use:
+
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r ..\requirements.txt
+.\.venv\Scripts\python.exe -m uvicorn phase2_api:app --host 127.0.0.1 --port 8000
+```
+
+## 4. macOS/Linux setup
+
+Run from the extracted source folder:
 
 ```bash
-source .venv/bin/activate
-pip install -r requirements.txt
+python3.13 -m venv M8_deployment/.venv
+M8_deployment/.venv/bin/python -m pip install --upgrade pip
+M8_deployment/.venv/bin/python -m pip install -r requirements.txt
 cd M8_deployment
-uvicorn phase2_api:app --host 0.0.0.0 --port 8000
+.venv/bin/python -m uvicorn phase2_api:app --host 127.0.0.1 --port 8000
 ```
 
-Open `http://127.0.0.1:8000/docs`, select `POST /predict`, upload a JPG or PNG,
-and execute the request. Health check: `http://127.0.0.1:8000/health`.
+## 5. Verify the service
 
-Example:
+Open:
 
-```bash
-curl -X POST "http://127.0.0.1:8000/predict" -F "file=@test.jpg"
+- Swagger UI: <http://127.0.0.1:8000/docs>
+- Health check: <http://127.0.0.1:8000/health>
+
+Expected health response:
+
+```json
+{"status":"ok","device":"cpu"}
 ```
 
-The service loads these relative artifacts automatically:
+Test a JPG or PNG from a second PowerShell window:
 
-- `M8_deployment/m4_detector.pt`
-- `M8_deployment/m5_segmenter.ts`
-- `M8_deployment/m4_detector.onnx` (export/parity evidence)
+```powershell
+curl.exe -X POST "http://127.0.0.1:8000/predict" -F "file=@C:\path\to\test.jpg"
+```
 
-## Full notebook reproduction
+The independently verified Windows run used Python `3.13.17`, returned HTTP
+`200` from `/predict`, and loaded both models on CPU. CPU latency is machine
+dependent and is not comparable to the Tesla T4 benchmark in the report.
 
-1. Open `ForgeryGuard_AI_Phase2_M4_M5_M8_Executed.ipynb` in Kaggle.
-2. Attach the project manifest/originals input and the authorized DEFACTO
+## 6. Full Kaggle notebook reproduction
+
+1. Open `ForgeryGuard_AI_Phase2_M4_M5_M8.ipynb` in Kaggle.
+2. Attach the project manifest/originals input and the authorised DEFACTO
    Copy-Move forged-image/mask input.
 3. Enable a GPU and Internet.
-4. Add `WANDB_API_KEY` through Kaggle Secrets if a new online run is required.
-5. Run cells in order and complete the documented human-review fields from the
-   displayed evidence.
+4. Add `WANDB_API_KEY` through Kaggle Secrets for a new online run.
+5. Run cells in order and complete the displayed human-review fields from the
+   actual galleries.
 
-The exact Kaggle package versions are stored in `requirements-kaggle.txt`, and
-the executed environment is recorded in `environment_manifest.json`.
+Exact Kaggle versions are stored in `reproducibility/requirements-kaggle.txt`.
 
 ## Scope
 
 The final decision is `NO_GO_FOR_AUTONOMOUS_USE`. The service is an academic
-demonstration and a human-review aid; it is not legal proof of forgery.
+demonstration and human-review aid; it is not legal proof of forgery.
